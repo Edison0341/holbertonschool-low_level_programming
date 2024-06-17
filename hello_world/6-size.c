@@ -11,10 +11,10 @@ int main(void)
 	long long int numero_largo_largo;
 	float numero_volador;
 
-	printf("size of a char: %lu byte(s)\n", sizeof(palabra));
-	printf("size of a int: %lu byte(s)\n", sizeof(numero));
-	printf("size of a long int: %lu byte(s)\n", sizeof(numero_largo));
-	printf("size of a long long int: %lu byte(s)\n", sizeof(numero_largo_largo));
-	printf("size of a float int: %lu byte(s)\n", sizeof(numero_volador));
+	printf("size of a char: %zu byte(s)\n", sizeof(palabra));
+	printf("size of a int: %zu byte(s)\n", sizeof(numero));
+	printf("size of a long int: %zu byte(s)\n", sizeof(numero_largo));
+	printf("size of a long long int: %zu byte(s)\n", sizeof(numero_largo_largo));
+	printf("size of a float int: %zu byte(s)\n", sizeof(numero_volador));
 	return (0);
 }
