@@ -10,7 +10,10 @@ char *_strcat(char *dest, char *src)
 {
 	int lengthD, lengthS;
 
-	for (lengthD = 0; *(dest + lengthD) != '\0'; lengthD++);
+	for (lengthD = 0; *(dest + lengthD) != '\0';)
+	{
+		lengthD++;
+	}
 
 	for (lengthS = 0; *(src + lengthS) != '\0' && lengthD < 97; lengthS++)
 	{
