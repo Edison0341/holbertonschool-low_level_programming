@@ -34,5 +34,7 @@ char *str_concat(char *s1, char *s2)
 	for (l = 0; s2[l] != '\0'; l++, k++)
 		anostr[k] = s2[l];
 
+	anostr[k] = '\0';
+
 	return (anostr);
 }
