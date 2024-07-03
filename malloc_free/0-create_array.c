@@ -3,10 +3,10 @@
 /**
  * create_array - creates array of char
  * @size: size of array
- * @c: 
- * Return: an array 
+ * @c: array
+ * Return: an array
  */
- char *create_array(unsigned int size, char c)
+char *create_array(unsigned int size, char c)
 {
 	int i;
 	char *x;
@@ -16,7 +16,7 @@
 
 	x = malloc(sizeof(char) * size);
 
-	if(x == NULL)
+	if (x == NULL)
 		return (NULL);
 
 	for (i = 0; x[i] == '\0'; i++)
