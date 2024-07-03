@@ -31,7 +31,7 @@ char *str_concat(char *s1, char *s2)
 	for (k = 0; k < i; k++)
 		anostr[k] = s1[k];
 
-	for (l = 0;l < j; l++, k++)
+	for (l = 0; l < j; l++, k++)
 		anostr[k] = s2[l];
 
 	anostr[k] = '\0';
