@@ -22,10 +22,8 @@ char *_strdup(char *str)
 	if (anostr == NULL)
 		return (NULL);
 
-	for (i = 0; anostr[i] != '\0'; i++)
+	for (i = 0; i < j; i++)
 		anostr[i] = str[i];
-
-	anostr[j] = '\0';
 
 	return (anostr);
 }
