@@ -3,6 +3,19 @@
 #include <stdio.h>
 #include <stddef.h>
 /**
+ * _strlen - gets length of the string
+ * @s: string
+ * Return: length of the string
+ */
+int _strlen(const char *s)
+{
+	int i;
+
+	for (i = 0; s[i]; i++)
+		;
+	return (i);
+}
+/**
  * add_node_end - add new nodes to the end of the list
  * @head: current place in the list
  * @str: string to add to the head
