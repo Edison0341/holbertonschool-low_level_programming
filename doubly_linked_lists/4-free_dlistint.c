@@ -1,7 +1,7 @@
 #include "lists.h"
 #include <stdlib.h>
 /**
- * free_listint - define function
+ * free_dlistint - define function
  * @head: describe argument
  */
 void free_dlistint(dlistint_t *head)
