@@ -1,7 +1,7 @@
 #include "lists.h"
 #include <stdlib.h>
 /**
- * add_nodeint_end - add new nodes to the end of the list
+ * add_dnodeint_end - add new nodes to the end of the list
  * @head: current place in the list
  * @n: int to add to the list
  * Return: pointer to current position in lists
@@ -20,12 +20,14 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 
 	if (*head == NULL)
 	{
+		new->prev = NULL;
 		*head = new;
-		return (*head);
+		return (new);
 	}
 	current = *head;
 	while (current->next != NULL)
 		current = current->next;
 	current->next = new;
-	return (*head);
+	new->prev = current;
+	return (new);
 }
