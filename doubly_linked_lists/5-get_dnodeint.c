@@ -6,7 +6,7 @@
  * @index: which node to stop at
  * Return: pointer to the nth node
  */
-dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);
+dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 	unsigned int i;
 
@@ -18,7 +18,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);
 			return (NULL);
 		}
 		head = head->next;
-		i++
+		i++;
 	}
 	return (head);
 }
