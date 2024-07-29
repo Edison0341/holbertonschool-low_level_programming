@@ -29,7 +29,7 @@ void _cp(char *file_from, char *file_to)
 	if (fd1 == -1)
 		_errexit("Error: Can't read from file %s\n", file_from, 98);
 
-	fd2 = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	fd2 = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (fd2 == -1)
 		_errexit("Error: Can't write to %s\n", file_to, 99);
 
