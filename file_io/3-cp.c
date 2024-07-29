@@ -23,7 +23,7 @@ void _errexit(char *str, char *file, int code)
 void _cp(char *file_from, char *file_to)
 {
 	int fd1, fd2, numread, numwrote;
-	char buffer[1024];
+	char buffer[BUFSIZE];
 
 	fd1 = open(file_from, O_RDONLY);
 	if (fd1 == -1)
@@ -33,29 +33,25 @@ void _cp(char *file_from, char *file_to)
 	if (fd2 == -1)
 		_errexit("Error: Can't write to %s\n", file_to, 99);
 
-	numread = 1024;
-	while (numread == 1024)
+	while ((numread = read(fd1, buffer, BUFSIZE)) > 0)
 	{
-		numread = read(fd1, buffer, 1024);
-		if (numread == -1)
-			_errexit("Error: Can't read from file %s\n", file_from, 98);
-
 		numwrote = write(fd2, buffer, numread);
-
-		if (numwrote == -1)
+		if (numwrote != numread)
 			_errexit("Error: Can't write to %s\n", file_to, 99);
 	}
 
 	if (numread == -1)
 		_errexit("Error: Can't read from file %s\n", file_from, 98);
+
 	if (close(fd2) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2);
 		exit(100);
 	}
+
 	if (close(fd1) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1);
 		exit(100);
 	}
 }
